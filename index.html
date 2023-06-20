@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 2</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <section>
+      <h1>List</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>Hobi</th>
+            <th>Gender</th>
+            <th>Alamat</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <!-- Append disini, didalam tag itu sendiri -->
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h1>Form</h1>
+      <form action="">
+        <input type="text" placeholder="Nama" id="nama" />
+        <input type="text" placeholder="Hobi" id="hobi" />
+        <input type="text" placeholder="Gender" id="gender" />
+        <textarea
+          name=""
+          id="alamat"
+          cols="30"
+          rows="10"
+          placeholder="Alamat"
+        ></textarea>
+        <div class="aksi">
+          <button type="button" id="btn">Submit</button>
+        </div>
+      </form>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+      $("#btn").click(function () {
+        var nama = $("#nama").val();
+        var hobi = $("#hobi").val();
+        var gender = $("#gender").val();
+        var alamat = $("#alamat").val();
+        var tbody = $("#tbody");
+
+        tbody.append(
+          "<tr><td class='blablalba'>" +
+            nama +
+            "</td><td>" +
+            hobi +
+            "</td><td>" +
+            gender +
+            "</td><td>" +
+            alamat +
+            '</td><td><button type="button" onclick="detail(\'' +
+            nama +
+            "','" +
+            hobi +
+            "','" +
+            gender +
+            "','" +
+            alamat +
+            "')\" class='detail'>Detail</button><button type='button' onclick='deleteElement(this)' class='delete'>Delete</button></td></tr>"
+        );
+
+        refreshForm();
+      });
+
+      function deleteElement(e) {
+        $(e).parent().parent().remove();
+        refreshForm();
+      }
+
+      function detail(nama, hobi, gender, alamat) {
+        refreshForm();
+        $("#nama").val(nama);
+        $("#hobi").val(hobi);
+        $("#gender").val(gender);
+        $("#alamat").val(alamat);
+      }
+
+      function refreshForm() {
+        $("#nama").val("");
+        $("#hobi").val("");
+        $("#gender").val("");
+        $("#alamat").val("");
+      }
+    </script>
+  </body>
+</html>

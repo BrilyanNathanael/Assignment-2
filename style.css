@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 200px;
+}
+
+section h1 {
+  margin-bottom: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #f5eded;
+}
+
+table tbody tr:nth-child(even),
+table thead tr {
+  background-color: #d9d9d9;
+}
+
+table td,
+table th {
+  padding: 10px 40px;
+  text-align: center;
+}
+
+table td a {
+  background-color: #95f9bd;
+  color: #000;
+  text-decoration: none;
+  padding: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+}
+
+form input {
+  margin-bottom: 8px;
+}
+
+form input,
+form textarea,
+form .aksi a,
+form .aksi button {
+  padding: 10px;
+  background-color: #d9d9d9;
+  color: #000;
+  text-decoration: none;
+}
+
+form .aksi {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.delete {
+  background-color: rgb(240, 31, 31);
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.detail {
+  background-color: #95f9bd;
+  color: #000;
+  padding: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
